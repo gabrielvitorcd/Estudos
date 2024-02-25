@@ -7,7 +7,10 @@ meses = int(input('Em quantos meses quer financiar? '))
 parcela = valor_casa / meses
 
 if parcela > salario * 0.3:
+
+    print('O valor da parcela foi de: R${:.2f} maior que 30% do seu salario.' .format(parcela))
     print('Emprestimo \033[4;31mNegado')
 
 else:
+    print('O valor da parcela foi de: R${:.2f} menor que 30% do seu salario' .format(parcela))
     print('Emprestimo \033[4;32mAprovado')
