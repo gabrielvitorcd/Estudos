@@ -15,7 +15,7 @@ if num1 + num2 > num3 and num2 + num3 > num1 and num1 + num3 > num2:
         print('É um Triangulo isoceles: Dois lados iguais')
     else:
         print('É um Triangulo Escaleno: Todos os lados diferentes')
-    
+
 
 else:
     print('Nao é possivel o triangulo')
