@@ -1,7 +1,6 @@
 from datetime import date
 print('='*30, 'PROGRAMA DE ALISTAMENTO MILITAR', '='*30)
 
-
 anonascimento = int(input('Informe o ano que voce nasceu? '))
 idade = date.today().year - anonascimento
 faltaprazo = 18 - idade
@@ -13,5 +12,4 @@ if idade < 18:
 elif idade == 18:
     print('Está na hora de se alistar.')
 else:
-
     print('Passou seu tempo de alistamento.  Voce excedeu: {} anos do seu alistamento' .format(passouprazo))
