@@ -1,11 +1,10 @@
+import time
+from random import randint
 print('='*30, 'JOGO JOKENPO', '='*30)
 
-from random import randint
-import time
 
 usuario = int(input('Selecione:\n1- Pedra\n2- Papel\n3- Tesoura\n'))
 maquina = randint(1, 3)
-
 
 
 print('Processando...')
