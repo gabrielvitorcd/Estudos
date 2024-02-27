@@ -1,6 +1,6 @@
 print('='*20, 'Aprovador de Emprestimos', '='*20)
 
-valor_casa = float(input('Qual valor da casa? '))
+valor_casa = float(input('Qual valor da casa? R$: '))
 salario = float(input('Qual valor do seu salario? '))
 meses = int(input('Em quantos meses quer financiar? '))
 
