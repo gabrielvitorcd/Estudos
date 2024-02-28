@@ -7,7 +7,7 @@ for c in range(1, 7):
        soma += numreal
     
     elif numreal % 2 == 1:
-        print('Valor Considerado')        
+        print('Valor Ignorado')        
        
 print('A soma de todos os pares {}' .format(soma))
         
