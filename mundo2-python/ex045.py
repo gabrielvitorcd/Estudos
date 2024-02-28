@@ -1,4 +1,5 @@
 from random import randint
+import time
 
 itens  = ('Pedra', 'Papel' , 'Tesoura')
 maquina = randint (0, 2)
@@ -8,6 +9,11 @@ usuario = int(input('''
 [ 2 ]- Tesoura
 Qual a sua jogada? 
 '''))
+print('JO')
+time.sleep(1)
+print('KEN')
+time.sleep(1)
+print('PO!!!')
 print('-=' * 15)
 print('O computador escolheu: {}' .format(itens[maquina]))
 print('Voce escolheu: {}' .format(itens[usuario]))
