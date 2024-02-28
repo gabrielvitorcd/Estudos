@@ -1,4 +1,4 @@
-print('='*30, 'PROGRAMA QUE ANALISA A FORMA DE PAGAMENTO E CALCULA O VALOR FINAL', '='*30)
+print('{:=^40}' .format('LOJAS GV'))
 
 valor = float(input('Insira o valor do produto: '))
 print(''' FORMAS DE PAGAMENTO
