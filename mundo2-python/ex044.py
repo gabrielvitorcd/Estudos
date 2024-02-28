@@ -2,10 +2,10 @@ print('{:=^40}' .format('LOJAS GV'))
 
 valor = float(input('Insira o valor do produto: '))
 print(''' FORMAS DE PAGAMENTO
-      [ 1 ] a vista dinheiro/cheque
-      [ 2 ] a vista cartao
-      [ 3 ] 2x no cartao
-      [ 4 ] 3x ou mais no cartao
+[ 1 ] a vista dinheiro/cheque
+[ 2 ] a vista cartao
+[ 3 ] 2x no cartao
+[ 4 ] 3x ou mais no cartao
 ''')
 
 formapagamento = int(input('Insira a sua forma de Pagamento: '))
