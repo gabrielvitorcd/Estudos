@@ -1,13 +1,12 @@
 soma = 0
+contador = 0
 
 for c in range(1, 7):
-    numreal = int(input('Digite um numero: '))
+    numreal = int(input('Digite {} numero: ' .format(c)))
     
     if numreal % 2 == 0:
        soma += numreal
-    
-    elif numreal % 2 == 1:
-        print('Valor Ignorado')        
+       contador = contador + 1       
        
-print('A soma de todos os pares {}' .format(soma))
+print('Voce informou {} numeros pares e a soma foi {}' .format(contador,soma))
         
