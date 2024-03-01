@@ -6,6 +6,7 @@ for c in range(1, 5):
     idade = int(input('Idade: '))
     soma_idade += idade
     sexo = str(input('Sexo [M/F]: '))
+    
 
 
 print('A media de idade do grupo é de {} anos'.format(soma_idade / c))
