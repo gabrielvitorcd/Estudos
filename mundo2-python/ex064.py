@@ -1,11 +1,9 @@
-c = 1
+c = 0
 contador = 0
 total = 0
-
-while c != 999:
-    num = int(input('Digite um numero [999 para parar]: '))
+num = int(input('Digite um numero [999 para parar]: '))
+while num != 999:
     contador += 1
     total += num 
-    c = num
-
-print('Voce digitou {} números e a soma entre eles foi {}' .format(contador - 1,total - 999))
+    num = int(input('Digite um numero [999 para parar]: '))
+print('Voce digitou {} números e a soma entre eles foi {}' .format(contador,total))
