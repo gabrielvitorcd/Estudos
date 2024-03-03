@@ -7,11 +7,11 @@ mulheresnovas = 0
 while True:
     idade = int(input('IDADE: '))
 
-    sexo = str(input('SEXO [M/F]: ')).strip().upper()[0]
+    sexo = ' '
     while sexo not in 'FM':
         sexo = str(input('SEXO [M/F]: ')).strip().upper()[0]
 
-    saida = str(input('Quer continuar [S/N]: ')).strip().upper()[0]
+    saida = ' '
     while saida not in 'SN':
         saida = str(input('Quer continuar [S/N]: ')).strip().upper()[0]
 

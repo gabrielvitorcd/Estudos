@@ -2,13 +2,16 @@ total = 0
 altovalor = 0
 menorvalor = 0
 nomeproduto = ''
-voltas = 0
+cont = 0
 
 while True:
     nome = str(input('Nome do Produto: '))
+    
     preco = float(input('Preco: R$'))
     total += preco
-    saida = str(input('Voce quer continuar [S/N]')).strip().upper()[0]
+    cont+=1
+
+    saida = ' '
     while saida not in 'SN':
         saida = str(input('Voce quer continuar [S/N]')).strip().upper()[0]
 
@@ -16,15 +19,11 @@ while True:
         altovalor += 1
     
     
-    if voltas == 1:
+    if cont == 1 or preco < menorvalor:
         menorvalor = preco
         nomeproduto = nome 
-    else:
-        if preco < menorvalor:
-            menorvalor = preco 
-            nomeproduto = nome 
-         
-    voltas+=1
+        
+    
     if saida == 'N':
         break
 

@@ -5,7 +5,10 @@ vitorias = 0
 while True:
     computador = randint(1, 10)
     usuario = int(input('Diga um valor: '))
-    escolha = str(input('Par ou Impar? [P/I]')).strip().upper()[0]
+    
+    escolha = ' '         
+    while escolha not in 'PI':  #Validacao para o usuario digitar somente p ou i
+        escolha = str(input('Par ou Impar? [P/I]')).strip().upper()[0]
 
     somatotal=computador + usuario
 
