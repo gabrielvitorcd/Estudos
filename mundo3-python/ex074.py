@@ -7,5 +7,5 @@ print('Os valores sorteados foram: ', end='')
 for c in sorteio:
     print(f'{c} ', end='')
 
-print('\nO maior valor foi {}'.format(sorted(sorteio)[-1]))
-print('O menor valor foi {}'.format(sorted(sorteio)[0]))
+print('\nO maior valor foi {}'.format(max(sorteio)))
+print('O menor valor foi {}'.format(min(sorteio)))
