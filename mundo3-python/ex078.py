@@ -1,33 +1,29 @@
 valores = []
 menor = 0
 maior = 0
-posicaomaior = 0
-posicaomenor = 0
-
 for contador in range(0,5):
     valores.append(int(input(f'Digite o valor {contador}: ')))
-
-for chave, valor in enumerate(valores):
+      
+    if contador == 0:
+        maior = valores[contador]
+        menor = valores[contador]
         
-    if chave == 0:
-        maior = valor
-        posicaomaior = chave
-        menor = valor
-        posicaomenor = chave
     else:
-        if valor > maior:
-            maior = valor
-            posicaomaior = chave
-        if valor < menor:
-            menor = valor
-            posicaomenor = chave
-           
-        
-
+        if valores[contador] > maior:
+            maior = valores[contador]
+            
+        if valores[contador] < menor:
+            menor = valores[contador]
+   
 print('-='*30)
 print(f'Voce digitou os valores {valores}')
-print(f'O maior valor é {maior} na posicao {posicaomaior}')
-print(f'O menor valor é {menor} na posicao {posicaomenor}')
-
-
-    
+print(f'O maior valor é {maior} nas posicoes ',end='')
+for i, v in enumerate(valores):
+    if v == maior:
+        print(f'{i}...', end='')
+print()
+print(f'O menor valor é {menor} na posicao ', end='')
+for i, v in enumerate(valores):
+    if v == menor:
+        print(f'{i}...', end='')
+print()
