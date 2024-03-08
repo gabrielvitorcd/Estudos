@@ -1,13 +1,20 @@
 galera = []
 dado = []
-totpessoas = 0
 nome = []
 maior = 0
 menor= 0
 while True:
     dado.append(str(input('Nome: ')))
     dado.append(int(input('Peso: ')))
-    totpessoas += 1
+    if len(galera) == 0:
+        maior = dado[1]
+        menor = dado[1]
+    else:
+        if dado[1] > maior:
+            maior = dado[1]
+        if dado[1] < menor:
+            menor = dado[1]
+   
     galera.append(dado[:])
     dado.clear()
 
@@ -19,16 +26,14 @@ while True:
 
 
 
-print(f'Ao todo, voce cadastrou {totpessoas} pessoas. ')
-   
+print(f'Ao todo, voce cadastrou {len(galera)} pessoas. ')
+print(f'O maior peso foi de {maior}, Peso de ', end='')
+
 for p in galera:
-    if p[1] >= maior:
-        maior = p[1]
-        if len(nome) == 0:
-            nome.append(p[0])
-        else:
-            nome.clear()
-            nome.append(p[0])
-    
-        
-print(f'O maior peso foi de {maior}, Peso de {nome}')
+    if p[1] == maior:
+        print(f' {p[0]}', end='')
+print()
+print(f'O menor peso foi de {menor}, Peso de ', end='')
+for p in galera:
+    if p[1] == menor:
+        print(f' {p[0]}', end='')
