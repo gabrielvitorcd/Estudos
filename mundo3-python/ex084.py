@@ -1,7 +1,6 @@
 galera = []
 dado = []
 totpessoas = 0
-maiorpeso = [[0]]
 nome = []
 maior = 0
 menor= 0
@@ -12,10 +11,6 @@ while True:
     galera.append(dado[:])
     dado.clear()
 
- 
-            
-
-    
     saida = str(input('Quer continuar? [S/N]')).strip().upper()[0]
     while saida not in 'SN':
         saida = str(input('Quer continuar? [S/N]')).strip().upper()[0]
@@ -29,6 +24,11 @@ print(f'Ao todo, voce cadastrou {totpessoas} pessoas. ')
 for p in galera:
     if p[1] >= maior:
         maior = p[1]
-        nome.append(p[0])
+        if len(nome) == 0:
+            nome.append(p[0])
+        else:
+            nome.clear()
+            nome.append(p[0])
+    
         
 print(f'O maior peso foi de {maior}, Peso de {nome}')
