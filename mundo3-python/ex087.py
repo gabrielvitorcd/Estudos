@@ -1,21 +1,21 @@
-todosnum = [[],[],[]]
+todosnum = [[], [], []]
 somapar = 0
 somacoluna = 0
 maior = 0
 
-for c in range(0,3):
+for c in range(0, 3):
     num = int(input(f'Digite um valor para [0, {c}]: '))
     if num % 2 == 0:
         somapar += num
     todosnum[0].append(num)
-for c in range(0,3):
+for c in range(0, 3):
     num = int(input(f'Digite um valor para [1, {c}]: '))
     if num > maior:
         maior = num
     if num % 2 == 0:
         somapar += num
     todosnum[1].append(num)
-for c in range(0,3):
+for c in range(0, 3):
     num = int(input(f'Digite um valor para [2, {c}]: '))
     if num % 2 == 0:
         somapar += num
