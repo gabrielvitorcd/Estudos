@@ -1,8 +1,25 @@
 from random import randint
 import time
+lista = []
+jogos = []
+jogada = int(input('Quantos numeros quer que eu sorteie? '))
+tot = 1
 
-jogadas = int(input('Quantos jogos voce quer que eu sorteie? '))
+while tot <= jogada:
+    contador = 0
+    while True:
+        num = randint(1,60)
+        if num not in lista:
+            lista.append(num)
+            contador += 1
+        if contador >= 6:
+            break
+    lista.sort()
+    jogos.append(lista[:])
+    lista.clear()
+    tot += 1
 
-for c in range(1,jogadas+1):
-    jogo = [[randint(1,60)],[randint(1,60)],[randint(1,60)],[randint(1,60)],[randint(1,60)],[randint(1,60)]]
-    print(f'Jogo {c}: {jogo}')
+for i,c in enumerate(jogos,1):
+    print(f'Jogo {i}: {c}')
+
+
