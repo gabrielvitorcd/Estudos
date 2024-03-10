@@ -21,5 +21,8 @@ while tot <= jogada:
 
 for i,c in enumerate(jogos,1):
     print(f'Jogo {i}: {c}')
+    time.sleep(1)
+
+print('Programa finalizado')
 
 
