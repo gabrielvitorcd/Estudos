@@ -14,10 +14,11 @@ while True:
         break
 
 print('-='*40)
-print('-'*25)
+print(f'{"No.":<4} {"NOME":<10} {"MEDIA":>8}')
+print('-'*30)
 for i, v in enumerate(alunos):
-    print(f'{i}   {v[0]}    {(v[1]+v[2])/2}')
-print('-'*25)
+    print(f'{i:<4}   {v[0]:<10}    {(v[1]+v[2])/2:>8.1f}')
+print('-'*30)
 
 while True:
     mostrar = int(input('Mostrar notas de qual aluno? (999 interrompe): '))
