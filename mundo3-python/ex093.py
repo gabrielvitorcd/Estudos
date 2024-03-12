@@ -1,7 +1,7 @@
 jogador = dict()
 partida = list()
 jogador['nome'] = str(input('Nome do jogador: '))
-tot = int(input('Quantas partidas zico jogou? '))
+tot = int(input(f'Quantas partidas {jogador["nome"]} jogou? '))
 
 for c in range(0,tot):
     partida.append( int(input(f'Quantos gols na partida {c}? ')))
