@@ -18,7 +18,7 @@ while True:
 
     resp = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
     while resp not in 'SN':
-        print('ERRO! Por favor, digite apenas M ou F')
+        print('ERRO! Por favor, digite apenas S ou N')
         resp = str(input('Quer continuar? [S/N] ')).strip().upper()[0]
     if resp == 'N':
         break
