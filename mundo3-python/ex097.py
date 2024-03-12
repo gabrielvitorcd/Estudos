@@ -1,7 +1,7 @@
 def escreva(txt):
-    print('~'*len(txt))
-    print(txt)
-    print('~'*len(txt))
+    print('~'*(len(txt)+5))
+    print(f'  {txt}  ')
+    print('~'*(len(txt)+5))
 
 
 escreva('Gustavo Guanabara')
