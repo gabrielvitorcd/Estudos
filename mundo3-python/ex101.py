@@ -1,4 +1,4 @@
-from datetime import date
+from datetime import date #Importa a data do computador
 
 def voto(nasc):
     idade = date.today().year - nasc
