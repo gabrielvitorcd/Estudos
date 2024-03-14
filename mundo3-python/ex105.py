@@ -16,8 +16,8 @@ def notas(*num,sit = False):
             menor = c
 
     resumo['total'] = len(num)
-    resumo['maior'] = maior
-    resumo['menor'] = menor
+    resumo['maior'] = maior # max(num)  -tem o mesmo resultado de if
+    resumo['menor'] = menor # min(num)  -tem o mesmo resultado de if
     resumo['media'] = sum(num)/len(num)
     if sit == True:
         if resumo['media'] >= 7:
