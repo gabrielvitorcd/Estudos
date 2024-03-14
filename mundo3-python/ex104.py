@@ -5,5 +5,6 @@ def leiaInt(msg):
         num = str(input('Digite um numero: '))
     return int(num)
 
+#PROGRAMA PRINCIPAL
 n = leiaInt('Digite um numero: ')
 print(f'Voce acabou de digitar o numero {n}')
