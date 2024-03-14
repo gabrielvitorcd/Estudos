@@ -1,7 +1,7 @@
 def leiaInt(msg):
     num = str(input(msg))
     while num.isnumeric() == False:
-        print('ERRO!')
+        print('\033[0;31mERRO! Digite um numero inteiro valido.\033[m')
         num = str(input('Digite um numero: '))
     return int(num)
 
