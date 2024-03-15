@@ -1,11 +1,10 @@
+import urllib
 import requests
 
-url = 'https://www.google.com.br/'
-
-response = requests.get(url)
-
-
-if response.status_code == 200:
-    print('conectei ')
-else:
+try:
+    site = urllib.request.urlopen('https://www.google.com.br/')
+except:
     print('PO deu pra conectar nao mano')
+else: 
+    print('conectei')
+    print(site.read())
