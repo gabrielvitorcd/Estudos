@@ -18,32 +18,32 @@ def titulo(msg):
     print(f'{msg}'.center(30))
     linha()
 
-def menu():
+def menu(lista):
+    global resp
     titulo('MENU PRINCIPAL')
-    print(f'''
-{selecionarcor()[3]} 1 {selecionarcor()[0]}{selecionarcor()[4]}- Ver pessoas cadastradas
-{selecionarcor()[3]} 2 {selecionarcor()[0]}{selecionarcor()[4]}- Cadastrar nova Pessoa
-{selecionarcor()[3]} 3 {selecionarcor()[0]}{selecionarcor()[4]}- Sair do Sistema''')
+    c = 1
+    for item in lista:
+        print(f'{selecionarcor()[3]} {c}{selecionarcor()[0]} -{selecionarcor()[4]} {item}{selecionarcor()[0]}')
+        c+=1
     linha()
-    
+    while True:
+        try:
+            resp = int(input(f'{selecionarcor()[2]} Sua Opcao: {selecionarcor()[0]}'))
+            if resp > 3 or resp < 1:
+                print('Digite um numero valido')
+        except:
+            print(f'{selecionarcor()[1]}ERRO! por favor, digite um numero valido(1 a 3){selecionarcor()[0]}')
+            continue
+        else:
+            if resp == 1:
+                titulo('OPCAO 1')
+                return resp
+            if resp == 2:
+                titulo('OPCAO 2')
+                return resp
+            if resp == 3:
+                print('Voce saiu do programa com sucesso')
+                return resp
 
 
-menu()
-while True:
-    try:
-        resp = int(input(f'{selecionarcor()[2]} Sua Opcao: {selecionarcor()[0]}'))
-        if resp > 3 or resp < 1:
-            print('Digite um numero valido')
-    except:
-        print(f'{selecionarcor()[1]}ERRO! por favor, digite um numero valido(1 a 3){selecionarcor()[0]}')
-        continue
-    else:
-        if resp == 1:
-            titulo('OPCAO 1')
-            break
-        if resp == 2:
-            titulo('OPCAO 2')
-            break
-        if resp == 3:
-            print('Voce saiu do programa com sucesso')
-            break
+menu(['Ver pessoas cadastradas', 'Cadastrar nova pessoa', 'Sair do sistema'])
