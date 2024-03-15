@@ -12,4 +12,6 @@ def diminuir(n, sub):
     sub /= 100
     return n - (n * sub)
 
+def formatacao(n):
+    return f'R${n:.2f}'
 
