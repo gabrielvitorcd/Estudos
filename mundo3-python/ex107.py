@@ -1,4 +1,4 @@
-from utilidadesex107 import moeda
+from utilidadescev import moeda
 
 p = float(input('Digite o preco: R$ '))
 print(f'A metade {p} é {moeda.metade(p)}')
