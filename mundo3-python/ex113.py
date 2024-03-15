@@ -8,6 +8,7 @@ def leiaInt():
         return int          #return cria um break no laco
     except:
         print(f'{cores.selecionarcor()[1]}ERRO!{cores.selecionarcor()[0]} Digite um número inteiro válido.')
+        continue
 
 def leiaFloat():
    global flot
@@ -20,6 +21,7 @@ def leiaFloat():
         return flot
     except:      
         print(f'{cores.selecionarcor()[1]}ERRO! Digite um numero real valido {cores.selecionarcor()[0]}')
+        continue
         
 try:
     divisao = leiaInt() / leiaFloat() 
