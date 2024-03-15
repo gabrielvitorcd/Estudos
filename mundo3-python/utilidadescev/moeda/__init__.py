@@ -38,9 +38,10 @@ def resumo(n,at=1,rd=1):
     print('RESUMO DO VALOR'.center(30))
     print('-'*30)
     print('Preco analisado:', f'{formatacao(n):>7}')
-    print('Dobro do preco: ', f'{dobro(n,True):>7}')
-    print('Metade do preco:', f'{metade(n,True):>7}')
-    print('80% de aumento: ', f'{aumentar(n,at,True):>7}')
-    print('35% de reducao: ', f'{diminuir(n,rd,True):>7}')
+    print('Dobro do preco: ', f'\t{dobro(n,True):>7}')
+    print('Metade do preco:', f'\t{metade(n,True):>7}')
+    print(f'{at}% de aumento: ', f'\t{aumentar(n,at,True):>7}')
+    print(f'{rd}% de reducao: ', f'\t{diminuir(n,rd,True):>7}')
     print('-'*30)
+
 
