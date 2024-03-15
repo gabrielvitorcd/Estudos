@@ -33,4 +33,9 @@ def formatacao(ft):
         
 
 
+def resumo():
+    print('-'*25)
+    print('     RESUMO DO VALOR     ')
 
+
+resumo()
