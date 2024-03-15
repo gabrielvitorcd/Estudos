@@ -34,14 +34,13 @@ def formatacao(ft):
 
 
 def resumo(n,at=1,rd=1):
-    txt = 'RESUMO DO VALOR'
-    print('-'*26)
-    print(f'{txt:>20}')
-    print('-'*26)
+    print('-'*30)
+    print('RESUMO DO VALOR'.center(30))
+    print('-'*30)
     print('Preco analisado:', f'{formatacao(n):>7}')
     print('Dobro do preco: ', f'{dobro(n,True):>7}')
     print('Metade do preco:', f'{metade(n,True):>7}')
     print('80% de aumento: ', f'{aumentar(n,at,True):>7}')
     print('35% de reducao: ', f'{diminuir(n,rd,True):>7}')
-    print('-'*26)
+    print('-'*30)
 
