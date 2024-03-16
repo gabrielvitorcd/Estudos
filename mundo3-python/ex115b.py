@@ -1,4 +1,4 @@
-
+from utilidadescev import arquivo
 def selecionarcor():
     c = [
     '\033[m',          # 0 - sem cor (fundo normal, letras normais)
@@ -44,16 +44,17 @@ def menu(lista):
     linha()
     opc =  leiaInt()
     return opc
+        
+arq = 'cadastro.txt'
+if not arquivo.arquivoExiste(arq): # se o arquivo nao existir == return False
+    arquivo.criarArquivo(arq)      #funcao que cria o arquivo e exibe uma msg se foi criado
     
-
 while True:
 
     menu(['Ver pessoas cadastradas', 'Cadastrar nova pessoa', 'Sair do sistema'])
     
     if opc == 1:
-        titulo('OPCAO 1')
-        arquivo = open("cadastro.txt", "r") # cria o arquivo contatos.txt dentro da pasta de desenvolvimento,abre o arquivo ja estiver criado
-        print(arquivo.readlines())
+        arquivo.lerArquivo(arq)
     elif opc == 2:
         titulo('OPCAO 2')
     elif opc == 3:
