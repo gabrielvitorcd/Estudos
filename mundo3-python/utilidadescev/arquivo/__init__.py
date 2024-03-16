@@ -33,3 +33,22 @@ def lerArquivo(nome):
         print(a.read())
         
 
+def gravarArquivo(nome):
+    try:
+        titulo('CADASTRO NOVO')
+        pessoa = []
+        registro = []
+        
+        nousuario = str(input('Nome: '))
+        idade = int(input('Idade: '))
+        
+        registro.append(nousuario)
+        registro.append(idade) 
+
+        a = open(nome, 'a')
+    except:
+        print('OPERACAO NAO REALIZADA')
+    else:
+        pessoa.append(registro[:])
+        registro.clear()
+        a.writelines(pessoa)
