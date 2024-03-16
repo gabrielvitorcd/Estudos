@@ -30,25 +30,22 @@ def lerArquivo(nome):
         print('Nao consegui ler o arquivo')
     else:
         titulo('PESSOAS CADASTRADAS')
-        print(a.read())
-        
+        for linha in a:         #converte em lista
+            dado = linha.split(';') #remove o ; que separa
+            dado[1] = dado[1].replace('\n','') #remove \n que foi inserido no write do cadastro 
+            print(f'{dado[0]}\t\t\t{dado[1]} anos')
+    finally:
+        a.close()
 
-def gravarArquivo(nome):
+def gravarArquivo(arq,nome='desconhecido',idade=0):
     try:
-        titulo('CADASTRO NOVO')
-        pessoa = []
-        registro = []
-        
-        nousuario = str(input('Nome: '))
-        idade = int(input('Idade: '))
-        
-        registro.append(nousuario)
-        registro.append(idade) 
-
-        a = open(nome, 'a')
+        a = open(arq, 'a')
     except:
-        print('OPERACAO NAO REALIZADA')
+        print('ARQUIVO NAO ENCONTRADO')
     else:
-        pessoa.append(registro[:])
-        registro.clear()
-        a.writelines(pessoa)
+        try:
+            a.write(f'{nome};{idade}\n')
+        except:
+            print('ERRO! AO ESCREVER ESSE PROGRAMA')
+        else:
+            print(f'Novo registro de {nome} adicionado')

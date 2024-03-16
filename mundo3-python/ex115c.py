@@ -12,11 +12,11 @@ def selecionarcor():
     return c
 
 
-def leiaInt():
+def leiaInt(msg=': '):
   global entrada
   while True:
     try:
-        entrada = int(input('Sua opcao: ')) 
+        entrada = int(input(msg)) 
         return entrada          #return cria um break no laco
     except(ValueError,TypeError):
         print(f'{selecionarcor()[1]}ERRO!{selecionarcor()[0]} Digite um número inteiro válido.')
@@ -42,7 +42,7 @@ def menu(lista):
         print(f'{selecionarcor()[3]} {c}{selecionarcor()[0]} -{selecionarcor()[4]} {item}{selecionarcor()[0]}')
         c+=1
     linha()
-    opc =  leiaInt()
+    opc =  leiaInt('Escolha de 1 a 3: ')
     return opc
         
 arq = 'cadastro.txt'
@@ -56,7 +56,11 @@ while True:
     if opc == 1:
         arquivo.lerArquivo(arq)
     elif opc == 2:
-        arquivo.gravarArquivo(arq)
+        titulo('CADASTRO NOVO')
+        nome = str(input('Nome: '))
+        idade = leiaInt('Idade: ')
+        
+        arquivo.gravarArquivo(arq,nome,idade)
     elif opc == 3:
         break
     else:
