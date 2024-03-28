@@ -1,0 +1,1 @@
+print(...)          #... é um codigo que nao da erro, serve para depois preencher. 
