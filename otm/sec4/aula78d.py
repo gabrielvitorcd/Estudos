@@ -11,6 +11,7 @@ s2 = {2,3,4}
 s3 = s1 | s2    #Une todos os elementos
 s4 = s1 & s2    #Item em comuns de ambos
 s5 = s1 - s2    #Itens diferente apenas do set da esquerad
+s6 = s1 ^ s2    #itens que nao estao em ambos
 
 
 # s4 = s1.difference(s2)    #itens or
@@ -19,3 +20,4 @@ s5 = s1 - s2    #Itens diferente apenas do set da esquerad
 print(s3)
 print(s4)
 print(s5)
+print(s6)
