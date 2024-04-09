@@ -25,3 +25,25 @@ lista_de_listas_de_inteiros = [
     [5, 3, 1, 8, 5, 7, 1, 8, 8, 7],
     [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],
 ]
+
+lista_resultado = []
+
+for chave,lista_cadavez in enumerate(lista_de_listas_de_inteiros):
+    print(f'Lista {chave}')
+    
+    for cada_item in lista_cadavez:
+        
+        
+        if lista_cadavez.count(cada_item) > 1:
+            lista_resultado.append(cada_item)
+
+           
+            
+    
+    if len(lista_resultado) == 0:
+        resultado = -1
+
+
+    print(lista_resultado)
+    lista_resultado.clear()
+    print(resultado)
