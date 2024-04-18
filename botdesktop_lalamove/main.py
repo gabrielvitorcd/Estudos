@@ -64,19 +64,55 @@ def valor_corrida_1():
 def destino_final():
     ...
 
-def aceitar_corrida():
-    #clicar na corrida
-    pyautogui.moveTo(x=644,y=272,duration=0.4)
-    pyautogui.click()
+def alarme_com_alerta():
 
-    sleep(1.5)
+    from pydub import AudioSegment
+    from pydub.playback import play
+    import tkinter as tk
+    from threading import Thread
 
-    #clicar e arrastar o aceitar/ inicio Point(x=521, y=701)
-    pyautogui.moveTo(x=521,y=701,duration=0.4)
+    # Função para parar o alarme
+    def parar_alarme():
+        global playing
+        playing = False
+        root.destroy()  # Fecha a janela quando o botão é clicado
 
-    #clicar e arrastar o aceitar/ fim Point(x=843, y=708)
-    pyautogui.dragTo(x=843,y=708, duration=0.4, button='left')
+    # Função para reproduzir o alarme
+    def alarme():
+        global playing
+        # Carrega o arquivo de áudio
+        alarme_audio = AudioSegment.from_file("mp3/alarm-clock-short-6402.mp3")
+        
+        playing = True
+        while playing:
+            play(alarme_audio)
 
+    # Função para iniciar o alarme em uma thread separada
+    def iniciar_alarme():
+        alarme_thread = Thread(target=alarme)
+        alarme_thread.start()
+
+    # Criando a janela principal
+    root = tk.Tk()
+    root.title("Alarme")
+    root.geometry("800x400")  # Define o tamanho da janela
+
+    # Definindo a cor de fundo da janela
+    root.configure(bg='red')
+
+    # Criando um frame para centralizar o botão
+    frame = tk.Frame(root, bg='red')
+    frame.pack(expand=True)
+
+    # Criando um botão para parar o alarme
+    botao_parar = tk.Button(frame, text="TOCOU A BOA", command=parar_alarme, height=2, width=20, font=("Arial", 14), bg='white', fg='black')
+    botao_parar.pack(pady=20)
+
+    # Iniciando o alarme em uma thread separada
+    iniciar_alarme()
+
+    # Rodando o loop principal da janela
+    root.mainloop()
 
 
 def atualizar_corridas():
@@ -99,25 +135,32 @@ while True:
     print(f'Consulta {contador}')
     contador += 1 
 
-    atualizar_corridas()
-    sleep(0.3)
+   
     atualizar_corridas()
     sleep(2)
+    pyautogui.scroll(200)
 
     distancia = distancia_corrida_1()
     preco = valor_corrida_1()
 
+    if distancia == False and preco == False:
+        sleep(3)
+        pyautogui.scroll(200)
+        distancia = distancia_corrida_1()
+        preco = valor_corrida_1()
+    if distancia <= 16 and preco > 20:
+        pyautogui.moveTo(x=644,y=272,duration=0.4)
+        pyautogui.click()
+        alarme_com_alerta()
+        break        
+       
     if distancia and preco:
-        if distancia <= 6 and preco > 60:
-            aceitar_corrida()
-            break
-        else:
-            print(f'Distancia da corrida [{distancia}]')
-            print(f'Preco da corrida [{preco}]')
-            print('NADABOM')
-    else:
+        print(f'Distancia da corrida [{distancia}]')
+        print(f'Preco da corrida [{preco}]')
+        print('NADABOM')
+    else:    
         print('Nao consegui pegar os dados')
-    
-    sleep(5)
 
 
+#abrir config
+#melhorar leitura
