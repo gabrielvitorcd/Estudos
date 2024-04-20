@@ -60,6 +60,21 @@ def valor_corrida_1():
     except (ValueError,AttributeError):
         return False
 
+def aceitar_corrida():
+    #clicar na corrida
+    pyautogui.moveTo(x=644,y=272,duration=0.4)
+    pyautogui.click()
+
+    sleep(1.5)
+
+    #clicar e arrastar o aceitar/ inicio Point(x=521, y=701)
+    pyautogui.moveTo(x=521,y=701,duration=0.4)
+
+    #clicar e arrastar o aceitar/ fim Point(x=843, y=708)
+    pyautogui.dragTo(x=843,y=708, duration=0.4, button='left')
+
+
+
 
 def destino_final():
     ...
@@ -151,6 +166,7 @@ while True:
     if distancia <= 16 and preco > 20:
         pyautogui.moveTo(x=644,y=272,duration=0.4)
         pyautogui.click()
+        aceitar_corrida()
         alarme_com_alerta()
         break        
        
