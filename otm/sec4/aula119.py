@@ -23,25 +23,26 @@ while True:
         for tarefa in lista_completa:
             print(tarefa)
         continue
-    if resp_usuario == 'desfazer':
+    elif resp_usuario == 'desfazer':
         lista_edicao.append(lista_completa[-1])
         lista_completa.pop()
         continue
 
-    if resp_usuario == 'refazer':
+    elif resp_usuario == 'refazer':
         if len(lista_edicao) == 0:
             print('NADA PRA REFAZER MANO')
         lista_completa.append(lista_edicao[-1])
         lista_edicao.pop()
         continue
     
-    if resp_usuario	== 'sair':
+    elif resp_usuario	== 'sair':
         break
     
-    try:
-        lista_completa.append(resp_usuario)
-    except:
-        print('deu ruim mano')
-    
-    
+    else:           
+        try:
+            lista_completa.append(resp_usuario)
+        except:
+            print('deu ruim mano')
+        
+        
     
