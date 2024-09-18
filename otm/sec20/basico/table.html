@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas</title>
+
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+        table td, table th {
+            border: 1px solid #ccc;
+            padding: 5px;
+            text-align: left;
+        }
+        table caption {
+            caption-side: bottom;
+            text-align: right;
+            font-style: italic;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+
+        tfoot td, table th {
+            background: #ccc;
+        }
+        tfoot td {
+            font-style: italic;
+        }
+        .responsive-table {
+            max-width: 100%;
+            overflow-x: auto;
+        }
+    </style>
+
+</head>
+<body>
+    <p>Lorem ipsum dolor sit.</p>
+    
+    <div class="responsive-table">
+    <table>
+        <caption>Uma descrição para tabela</caption>
+        <thead>
+            <tr>
+                <th>Coluna 1</th>
+                <th>Coluna 2</th>
+                <th>Coluna 3</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>linha 1</td>
+                <td>linha 2</td>
+                <td>linha 3</td>
+            </tr>
+            <tr>
+                <td colspan="2" >Aqui</td>
+                
+                <td>linha 3</td>
+            </tr>
+            <tr>
+                <td>linha 1</td>
+                <td>linha 2</td>
+                <td>linha 3</td>
+            </tr>
+        </tbody>
+        
+        <tfoot>
+            <tr>
+                <td colspan="2"></td>
+                <td>Total: <br> R$555</td>               
+            </tr>
+
+        </tfoot>
+    </table>
+    </div>
+
+
+</body>
+</html>
